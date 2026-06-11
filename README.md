@@ -1,16 +1,8 @@
 # hello-bot
 
-A simple hello-world agent on [Norns](https://github.com/nornscode/norns). Demonstrates how to build a worker and client using the [norns Python SDK](https://github.com/nornscode/norns-sdk-python).
+A hello-world agent on [Norns](https://github.com/nornscode/norns). Good starting point for seeing how workers and clients work with the [Python SDK](https://github.com/nornscode/norns-sdk-python).
 
-## Quickstart
-
-### Prerequisites
-
-- Python 3.10+
-- [uv](https://docs.astral.sh/uv/) package manager
-- [nornsctl](https://github.com/nornscode/nornsctl) CLI
-
-### Run
+## Run
 
 Start a local Norns server:
 
@@ -26,7 +18,7 @@ uv sync
 uv run hello-worker
 ```
 
-In another terminal, send a message via the client:
+In another terminal, send a message:
 
 ```sh
 uv run hello-client
