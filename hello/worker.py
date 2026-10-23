@@ -32,7 +32,6 @@ agent = Agent(
         "say_hello tool with that name."
     ),
     tools=[say_hello],
-    mode="conversation",
     on_failure="retry_last_step",
 )
 
