@@ -11,6 +11,17 @@ brew install nornscode/tap/nornsctl
 nornsctl dev
 ```
 
+The project depends on the SDK as an editable checkout (see `[tool.uv.sources]`
+in `pyproject.toml`), so clone it next to this repo:
+
+```sh
+git clone https://github.com/nornscode/norns-sdk-python ../norns-sdk-python
+```
+
+Both the worker and the client read `NORNS_API_KEY` (and optionally `NORNS_URL`,
+default `http://localhost:4001`); the worker also needs `ANTHROPIC_API_KEY`.
+Export them, or put them in a `.env` file (`.envrc` loads it under direnv).
+
 Start the worker:
 
 ```sh

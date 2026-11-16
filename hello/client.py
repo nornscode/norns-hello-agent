@@ -1,4 +1,5 @@
 import os
+import uuid
 
 from norns import NornsClient
 
@@ -12,8 +13,10 @@ def main():
     # A conversation key keeps every message in this exchange pointed at the
     # same agent process. It matters below: the answer has to reach the agent
     # that asked the question. Without a key, each send_message starts a fresh
-    # run instead.
-    conversation = "hello-demo"
+    # run instead. It's unique per run of this script: a reused key would land
+    # on the previous conversation, where the agent already knows your name (or
+    # is still parked on an unanswered question, and "Hello!" becomes the answer).
+    conversation = f"hello-demo-{uuid.uuid4().hex[:8]}"
 
     result = client.send_message(
         "hello-bot", "Hello!", conversation_key=conversation, wait=True, timeout=60
